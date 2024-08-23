@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.ads.havagas
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
@@ -107,7 +108,16 @@ class MainActivity : AppCompatActivity() {
             if (orientador.isNotEmpty()) mensagem.append("Orientador: $orientador\n")
             mensagem.append("Vagas de Interesse: $vagasInteresse\n")
 
-            Toast.makeText(this, mensagem.toString(), Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, mensagem.toString(), Toast.LENGTH_LONG).show()
+
+            AlertDialog.Builder(this)
+                .setTitle("Confirmação de Dados")
+                .setMessage(mensagem.toString())
+                .setPositiveButton("OK") { dialog, _ ->
+                    dialog.dismiss() // Fecha o diálogo quando o usuário clicar em OK
+                }
+                .create()
+                .show()
         }
 
         amb.limparBt.setOnClickListener {
