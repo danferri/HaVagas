@@ -12,7 +12,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/etNomeCompleto"
+        android:id="@+id/nomecompletoEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Nome completo"
@@ -23,182 +23,182 @@
         android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/emailEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="E-mail"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/etNomeCompleto"
+        app:layout_constraintTop_toBottomOf="@id/nomecompletoEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <CheckBox
-        android:id="@+id/cbReceberEmails"
+        android:id="@+id/receberemailCb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deseja receber e-mails com oportunidades?"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintTop_toBottomOf="@id/emailEt"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etTelefone"
+        android:id="@+id/telefoneEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Telefone"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@id/cbReceberEmails"
+        app:layout_constraintTop_toBottomOf="@id/receberemailCb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <RadioGroup
-        android:id="@+id/rgTipoTelefone"
+        android:id="@+id/tipotelefoneRg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/etTelefone"
+        app:layout_constraintTop_toBottomOf="@id/telefoneEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="horizontal"
         android:layout_marginTop="8dp">
 
         <RadioButton
-            android:id="@+id/rbComercial"
+            android:id="@+id/comercialRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Comercial"/>
 
         <RadioButton
-            android:id="@+id/rbResidencial"
+            android:id="@+id/residencialRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Residencial"/>
     </RadioGroup>
 
     <CheckBox
-        android:id="@+id/cbAdicionarCelular"
+        android:id="@+id/addcelularCb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Adicionar telefone celular"
-        app:layout_constraintTop_toBottomOf="@id/rgTipoTelefone"
+        app:layout_constraintTop_toBottomOf="@id/tipotelefoneRg"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etCelular"
+        android:id="@+id/celularEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Telefone celular"
         android:inputType="phone"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/cbAdicionarCelular"
+        app:layout_constraintTop_toBottomOf="@id/addcelularCb"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <RadioGroup
-        android:id="@+id/rgSexo"
+        android:id="@+id/sexoRg"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/etCelular"
+        app:layout_constraintTop_toBottomOf="@id/celularEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp">
 
         <RadioButton
-            android:id="@+id/rbMasculino"
+            android:id="@+id/masculinoRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Masculino"/>
 
         <RadioButton
-            android:id="@+id/rbFeminino"
+            android:id="@+id/femininoRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Feminino"/>
 
         <RadioButton
-            android:id="@+id/rbOutro"
+            android:id="@+id/outroRb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Outro"/>
     </RadioGroup>
 
     <EditText
-        android:id="@+id/etDataNascimento"
+        android:id="@+id/datanascimentoEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Data de Nascimento"
         android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@id/rgSexo"
+        app:layout_constraintTop_toBottomOf="@id/sexoRg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <Spinner
-        android:id="@+id/spFormacao"
+        android:id="@+id/formacaoSp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/etDataNascimento"
+        app:layout_constraintTop_toBottomOf="@id/datanascimentoEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etAnoConclusao"
+        android:id="@+id/anoconclusaoEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Ano de Conclusão"
         android:inputType="number"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/spFormacao"
+        app:layout_constraintTop_toBottomOf="@id/formacaoSp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etInstituicao"
+        android:id="@+id/instituicaoEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Instituição"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/etAnoConclusao"
+        app:layout_constraintTop_toBottomOf="@id/anoconclusaoEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etTituloMonografia"
+        android:id="@+id/titulomonografiaEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Título da Monografia"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/etInstituicao"
+        app:layout_constraintTop_toBottomOf="@id/instituicaoEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etOrientador"
+        android:id="@+id/orientadorEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Orientador"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/etTituloMonografia"
+        app:layout_constraintTop_toBottomOf="@id/titulomonografiaEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
     <EditText
-        android:id="@+id/etVagasInteresse"
+        android:id="@+id/vagainteresseEt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Vagas de Interesse"
         android:inputType="textMultiLine"
         android:minLines="3"
-        app:layout_constraintTop_toBottomOf="@id/etOrientador"
+        app:layout_constraintTop_toBottomOf="@id/orientadorEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
@@ -207,20 +207,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/etVagasInteresse"
+        app:layout_constraintTop_toBottomOf="@id/vagainteresseEt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp">
 
         <Button
-            android:id="@+id/btnLimpar"
+            android:id="@+id/limparBt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Limpar"/>
 
         <Button
-            android:id="@+id/btnSalvar"
+            android:id="@+id/salvarBt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

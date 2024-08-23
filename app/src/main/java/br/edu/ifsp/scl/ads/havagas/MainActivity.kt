@@ -22,34 +22,34 @@ class MainActivity : AppCompatActivity() {
         val formacoes = resources.getStringArray(R.array.education_levels)
         val formacaoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, formacoes)
         formacaoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        amb.spFormacao.adapter = formacaoAdapter
+        amb.formacaoSp.adapter = formacaoAdapter
 
-        amb.spFormacao.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        amb.formacaoSp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when (position) {
                     0, 1 -> {
-                        amb.etAnoConclusao.visibility = View.VISIBLE
-                        amb.etInstituicao.visibility = View.GONE
-                        amb.etTituloMonografia.visibility = View.GONE
-                        amb.etOrientador.visibility = View.GONE
+                        amb.anoconclusaoEt.visibility = View.VISIBLE
+                        amb.instituicaoEt.visibility = View.GONE
+                        amb.titulomonografiaEt.visibility = View.GONE
+                        amb.orientadorEt.visibility = View.GONE
                     }
                     2, 3 -> {
-                        amb.etAnoConclusao.visibility = View.VISIBLE
-                        amb.etInstituicao.visibility = View.VISIBLE
-                        amb.etTituloMonografia.visibility = View.GONE
-                        amb.etOrientador.visibility = View.GONE
+                        amb.anoconclusaoEt.visibility = View.VISIBLE
+                        amb.instituicaoEt.visibility = View.VISIBLE
+                        amb.titulomonografiaEt.visibility = View.GONE
+                        amb.orientadorEt.visibility = View.GONE
                     }
                     4, 5 -> {
-                        amb.etAnoConclusao.visibility = View.VISIBLE
-                        amb.etInstituicao.visibility = View.VISIBLE
-                        amb.etTituloMonografia.visibility = View.VISIBLE
-                        amb.etOrientador.visibility = View.VISIBLE
+                        amb.anoconclusaoEt.visibility = View.VISIBLE
+                        amb.instituicaoEt.visibility = View.VISIBLE
+                        amb.titulomonografiaEt.visibility = View.VISIBLE
+                        amb.orientadorEt.visibility = View.VISIBLE
                     }
                     else -> {
-                        amb.etAnoConclusao.visibility = View.GONE
-                        amb.etInstituicao.visibility = View.GONE
-                        amb.etTituloMonografia.visibility = View.GONE
-                        amb.etOrientador.visibility = View.GONE
+                        amb.anoconclusaoEt.visibility = View.GONE
+                        amb.instituicaoEt.visibility = View.GONE
+                        amb.titulomonografiaEt.visibility = View.GONE
+                        amb.orientadorEt.visibility = View.GONE
                     }
                 }
             }
@@ -59,38 +59,38 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        amb.cbAdicionarCelular.setOnCheckedChangeListener { _, isChecked ->
+        amb.addcelularCb.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                amb.etCelular.visibility = View.VISIBLE
+                amb.celularEt.visibility = View.VISIBLE
             } else {
-                amb.etCelular.visibility = View.GONE
+                amb.celularEt.visibility = View.GONE
             }
         }
 
-        amb.btnSalvar.setOnClickListener {
-            val nomeCompleto = amb.etNomeCompleto.text.toString()
-            val email = amb.etEmail.text.toString()
-            val desejaReceberEmails = amb.cbReceberEmails.isChecked
-            val telefone = amb.etTelefone.text.toString()
-            val tipoTelefone = when (amb.rgTipoTelefone.checkedRadioButtonId) {
-                amb.rbComercial.id -> "Comercial"
-                amb.rbResidencial.id -> "Residencial"
+        amb.salvarBt.setOnClickListener {
+            val nomeCompleto = amb.nomecompletoEt.text.toString()
+            val email = amb.emailEt.text.toString()
+            val desejaReceberEmails = amb.receberemailCb.isChecked
+            val telefone = amb.telefoneEt.text.toString()
+            val tipoTelefone = when (amb.tipotelefoneRg.checkedRadioButtonId) {
+                amb.comercialRb.id -> "Comercial"
+                amb.residencialRb.id -> "Residencial"
                 else -> "Não especificado"
             }
-            val celular = if (amb.cbAdicionarCelular.isChecked) amb.etCelular.text.toString() else "Não informado"
-            val sexo = when (amb.rgSexo.checkedRadioButtonId) {
-                amb.rbMasculino.id -> "Masculino"
-                amb.rbFeminino.id -> "Feminino"
-                amb.rbOutro.id -> "Outro"
+            val celular = if (amb.addcelularCb.isChecked) amb.celularEt.text.toString() else "Não informado"
+            val sexo = when (amb.sexoRg.checkedRadioButtonId) {
+                amb.masculinoRb.id -> "Masculino"
+                amb.femininoRb.id -> "Feminino"
+                amb.outroRb.id -> "Outro"
                 else -> "Não especificado"
             }
-            val dataNascimento = amb.etDataNascimento.text.toString()
-            val formacao = amb.spFormacao.selectedItem.toString()
-            val anoConclusao = amb.etAnoConclusao.text.toString()
-            val instituicao = amb.etInstituicao.text.toString()
-            val tituloMonografia = amb.etTituloMonografia.text.toString()
-            val orientador = amb.etOrientador.text.toString()
-            val vagasInteresse = amb.etVagasInteresse.text.toString()
+            val dataNascimento = amb.datanascimentoEt.text.toString()
+            val formacao = amb.formacaoSp.selectedItem.toString()
+            val anoConclusao = amb.anoconclusaoEt.text.toString()
+            val instituicao = amb.instituicaoEt.text.toString()
+            val tituloMonografia = amb.titulomonografiaEt.text.toString()
+            val orientador = amb.orientadorEt.text.toString()
+            val vagasInteresse = amb.vagainteresseEt.text.toString()
 
             val mensagem = StringBuilder()
             mensagem.append("Nome Completo: $nomeCompleto\n")
@@ -110,22 +110,22 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, mensagem.toString(), Toast.LENGTH_LONG).show()
         }
 
-        amb.btnLimpar.setOnClickListener {
-            amb.etNomeCompleto.text.clear()
-            amb.etEmail.text.clear()
-            amb.cbReceberEmails.isChecked = false
-            amb.etTelefone.text.clear()
-            amb.rgTipoTelefone.clearCheck()
-            amb.cbAdicionarCelular.isChecked = false
-            amb.etCelular.text.clear()
-            amb.rgSexo.clearCheck()
-            amb.etDataNascimento.text.clear()
-            amb.spFormacao.setSelection(0)
-            amb.etAnoConclusao.text.clear()
-            amb.etInstituicao.text.clear()
-            amb.etTituloMonografia.text.clear()
-            amb.etOrientador.text.clear()
-            amb.etVagasInteresse.text.clear()
+        amb.limparBt.setOnClickListener {
+            amb.nomecompletoEt.text.clear()
+            amb.emailEt.text.clear()
+            amb.receberemailCb.isChecked = false
+            amb.telefoneEt.text.clear()
+            amb.tipotelefoneRg.clearCheck()
+            amb.addcelularCb.isChecked = false
+            amb.celularEt.text.clear()
+            amb.sexoRg.clearCheck()
+            amb.datanascimentoEt.text.clear()
+            amb.formacaoSp.setSelection(0)
+            amb.anoconclusaoEt.text.clear()
+            amb.instituicaoEt.text.clear()
+            amb.titulomonografiaEt.text.clear()
+            amb.orientadorEt.text.clear()
+            amb.vagainteresseEt.text.clear()
         }
     }
 }
