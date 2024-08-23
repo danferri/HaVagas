@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">HaVagas</string>
 
-    <string-array name="education_levels">
+    <string-array name="formacao">
         <item>Fundamental</item>
         <item>Médio</item>
         <item>Graduação</item>

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(amb.root)
 
-        val formacoes = resources.getStringArray(R.array.education_levels)
+        val formacoes = resources.getStringArray(R.array.formacao)
         val formacaoAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, formacoes)
         formacaoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         amb.formacaoSp.adapter = formacaoAdapter
