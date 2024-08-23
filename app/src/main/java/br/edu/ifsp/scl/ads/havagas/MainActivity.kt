@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("Confirmação de Dados")
                 .setMessage(mensagem.toString())
                 .setPositiveButton("OK") { dialog, _ ->
-                    dialog.dismiss() // Fecha o diálogo quando o usuário clicar em OK
+                    dialog.dismiss()
                 }
                 .create()
                 .show()
