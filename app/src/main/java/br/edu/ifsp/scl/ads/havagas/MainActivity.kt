@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                 //NSA
             }
         }
-
+        //anotação de teste
         amb.addcelularCb.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 amb.celularEt.visibility = View.VISIBLE
